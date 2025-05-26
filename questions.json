@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "question": "Which language runs in a web browser?",
+    "options": ["Java", "C", "Python", "JavaScript"],
+    "answer": "JavaScript"
+  },
+  {
+    "id": 2,
+    "question": "What does CSS stand for?",
+    "options": ["Cascading Style Sheets", "Computer Style Sheet", "Creative Style Syntax", "Colorful Style Syntax"],
+    "answer": "Cascading Style Sheets"
+  }
+]
