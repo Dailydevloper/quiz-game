@@ -26,7 +26,8 @@ body {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: #00ffff;
   margin-bottom: 20px;
@@ -38,7 +39,8 @@ label {
   color: #cccccc;
 }
 
-select, input[type="number"] {
+select,
+input[type="number"] {
   width: 100%;
   padding: 10px;
   border-radius: 6px;

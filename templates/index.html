@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,42 +8,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
+
 <body>
   <div class="container">
     <h1>Quiz Game</h1>
 
     <div id="setup-container">
       <form id="setup-form">
-  <label for="difficulty">Select Difficulty:</label>
-  <select id="difficulty" name="difficulty" required>
-    <option value="easy">Easy</option>
-    <option value="medium">Medium</option>
-    <option value="hard">Hard</option>
-  </select>
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="student-name" required>
 
-  <label for="type">Select Type:</label>
-  <select id="type" name="type" required>
-    <option value="multiple">Multiple Choice</option>
-    <option value="boolean">True / False</option>
-  </select>
+        <label for="roll-no">Roll Number:</label>
+        <input type="text" id="roll-no" name="roll-no" required>
 
-  <label for="amount">Number of Questions:</label>
-  <input type="number" id="amount" name="amount" min="1" max="50" required>
+        <label for="difficulty">Select Difficulty:</label>
+        <select id="difficulty" name="difficulty" required>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
 
-  <label for="category">Select Category:</label>
-  <select id="category" name="category" required>
-    <option value="9">General Knowledge</option>
-    <option value="18">Computer Science</option>
-    <option value="23">History</option>
-    <option value="17">Science & Nature</option>
-    <option value="21">Sports</option>
-    <option value="22">Geography</option>
-    <option value="12">Music</option>
-    <option value="11">Movies</option>
-  </select>
+        <label for="type">Select Type:</label>
+        <select id="type" name="type" required>
+          <option value="multiple">Multiple Choice</option>
+          <option value="boolean">True / False</option>
+        </select>
 
-  <button type="submit">Start Quiz</button>
-</form>
+        <label for="amount">Number of Questions:</label>
+        <input type="number" id="amount" name="amount" min="1" max="50" required>
+
+        <label for="category">Select Category:</label>
+        <select id="category" name="category" required>
+          <option value="18">Computer Science</option>
+          <option value="19">Mathematics</option>
+          <option value="30">Gadgets</option>
+        </select>
+
+        <button type="submit">Start Quiz</button>
+      </form>
 
     </div>
 
@@ -52,5 +55,5 @@
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-</html>
 
+</html>

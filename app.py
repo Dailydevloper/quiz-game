@@ -12,30 +12,25 @@ def index():
 
 @app.route('/get_questions', methods=['POST'])
 def get_questions():
-    try:
-        data = request.get_json()
-        difficulty = data.get('difficulty')
-        q_type = data.get('type')
-        amount = data.get('amount')
-        category = data.get('category')  
+    data = request.get_json()
+    amount = data.get('amount')
+    difficulty = data.get('difficulty')
+    qtype = data.get('type')
+    category = data.get('category')
+    student_name = data.get('studentName')
+    roll_no = data.get('rollNo')
 
-        params = {
-            'amount': amount,
-            'difficulty': difficulty,
-            'type': q_type,
-            'category': category
-        }
+    print(f"Quiz started by {student_name} (Roll No: {roll_no})")
 
-        response = requests.get('https://opentdb.com/api.php', params=params)
-        result = response.json()
+    with open('students_log.txt', 'a') as f:
+        f.write(f"{student_name} - {roll_no}\n")
 
-        if result['response_code'] != 0:
-            return jsonify({'error': 'Could not fetch questions'}), 400
+    url = f'https://opentdb.com/api.php?amount={amount}&category={category}&difficulty={difficulty}&type={qtype}'
+    response = requests.get(url)
+    questions = response.json().get('results', [])
 
-        return jsonify(result['results'])
+    return jsonify(questions)
 
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
 
 
 
